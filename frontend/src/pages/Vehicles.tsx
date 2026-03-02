@@ -31,6 +31,7 @@ import {
   updateVehicleInFirestore, 
   deleteVehicleFromFirestore 
 } from '@/lib/firestoreService';
+import { uploadToB2, getVehicleImagePath } from '@/lib/b2Service';
 import { Vehicle } from '@/types/rental';
 
 const carBrands = [
@@ -130,11 +131,11 @@ const Vehicles = () => {
     try {
       let imageUrl = formData.image;
       
-      // If image is a base64 string, upload to Firebase Storage
+      // If image is a base64 string, upload to Backblaze B2
       if (formData.image && formData.image.startsWith('data:image')) {
         const tempId = editingVehicle?.id || `new_${Date.now()}`;
         const imagePath = getVehicleImagePath(tempId);
-        imageUrl = await uploadBase64Image(formData.image, imagePath);
+        imageUrl = await uploadToB2(formData.image, imagePath);
       }
 
       const vehicleData = {

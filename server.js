@@ -28,17 +28,16 @@ authorize();
 app.post("/upload", upload.single("file"), async (req, res) => {
   try {
     const file = req.file;
+    const fileName = `${Date.now()}-${file.originalname}`;
 
     const response = await b2.uploadFile({
       uploadUrl: uploadUrlData.data.uploadUrl,
       uploadAuthToken: uploadUrlData.data.authorizationToken,
-      fileName: file.originalname,
+      fileName: fileName,
       data: file.buffer,
     });
 
-    const fileUrl =
-      b2.downloadUrl +
-      `/file/${response.data.bucketId}/${response.data.fileName}`;
+    const fileUrl = `https://f005.backblazeb2.com/file/${process.env.B2_BUCKET_ID}/${fileName}`;
 
     res.json({ url: fileUrl });
   } catch (err) {
