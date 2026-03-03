@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const multer = require("multer");
 const B2 = require("backblaze-b2");
@@ -59,11 +60,16 @@ app.post("/upload", upload.single("file"), async (req, res) => {
   }
 });
 
-
 app.get("/", (req, res) => {
   res.send("B2 Server Running ✅");
 });
 
-app.listen(3001, () => {
-  console.log("Server running on port 3001");
+app.get("/test", (req, res) => {
+  res.json({ message: "Server working" });
+});
+// ✅ IMPORTANT: Hardcoded 3001 hata diya
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

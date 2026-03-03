@@ -56,7 +56,7 @@ export const InvoicePreview = ({ rental }: InvoicePreviewProps) => {
             <FileText className="w-5 h-5 text-primary" />
             <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">AGREEMENT</p>
           </div>
-          <p className="text-base md:text-lg font-semibold text-foreground">#{displayAgreementNumber}</p>
+          <p className="text-base md:text-lg font-semibold text-foreground">{displayAgreementNumber}</p>
           <p className="text-xs md:text-sm text-muted-foreground mt-1">{formatDate(rental.createdAt)}</p>
         </div>
       </div>

@@ -80,7 +80,7 @@ export const downloadPDFDirect = async (rental: Rental): Promise<void> => {
         <!-- Agreement Number Badge -->
         <div style="margin-top: 15px;">
           <div style="background: ${BRAND_ORANGE}; color: white; padding: 10px 24px; border-radius: 10px; font-weight: 800; font-size: 16px; display: inline-block; box-shadow: 0 4px 10px rgba(244, 124, 44, 0.3);">
-            AGREEMENT REF: #${displayAgreementNumber}
+            AGREEMENT REF: {displayAgreementNumber}
           </div>
           <div style="color: ${BRAND_GRAY_500}; font-size: 10px; margin-top: 6px;">Issued: ${formatDate(rental.createdAt)}</div>
         </div>

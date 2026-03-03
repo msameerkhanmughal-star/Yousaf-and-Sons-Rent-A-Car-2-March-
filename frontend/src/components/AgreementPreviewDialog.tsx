@@ -32,7 +32,7 @@ export const AgreementPreviewDialog = ({
     const agreementNum = rental.agreementNumber || rental.id.toUpperCase();
     const message = `🚗 *Yousif & Sons Rent A Car*
 ━━━━━━━━━━━━━━━━
-📋 *Agreement #${agreementNum}*
+📋 *Agreement {agreementNum}*
 
 👤 *Client:* ${rental.client.fullName}
 📱 *Phone:* ${rental.client.phone}
