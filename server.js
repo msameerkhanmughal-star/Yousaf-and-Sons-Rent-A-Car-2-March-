@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 const express = require("express");
 const multer = require("multer");
 const B2 = require("backblaze-b2");
