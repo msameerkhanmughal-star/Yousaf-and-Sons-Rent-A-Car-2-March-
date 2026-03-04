@@ -3,7 +3,7 @@ const express = require("express");
 const multer = require("multer");
 const B2 = require("backblaze-b2");
 const cors = require("cors");
-
+require('dotenv').config();  // <-- Add this line
 const app = express();
 app.use(cors());
 
