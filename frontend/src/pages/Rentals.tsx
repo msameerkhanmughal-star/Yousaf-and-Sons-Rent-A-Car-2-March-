@@ -191,7 +191,7 @@ const Rentals = () => {
               <table className="w-full">
                 <thead>
                   <tr className="table-header">
-                    <th className="px-6 py-4 text-left">Agreement</th>
+                    <th className="px-6 py-4 text-left">Agreement #</th>
                     <th className="px-6 py-4 text-left">Client</th>
                     <th className="px-6 py-4 text-left">Vehicle</th>
                     <th className="px-6 py-4 text-left">Rental Period</th>
@@ -204,7 +204,7 @@ const Rentals = () => {
                   {filteredRentals.map((rental) => (
                     <tr key={rental.id} className="hover:bg-muted/30 transition-colors animate-fade-in">
                       <td className="px-6 py-4">
-                        <span className="font-bold text-primary">
+                        <span className="font-mono font-bold text-primary">
                           {rental.agreementNumber || '---'}
                         </span>
                       </td>

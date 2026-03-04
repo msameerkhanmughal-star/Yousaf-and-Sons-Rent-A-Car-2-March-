@@ -764,7 +764,7 @@ const EditBooking = () => {
                   id="ag-num"
                   value={agreementNumber}
                   onChange={(e) => setAgreementNumber(e.target.value)}
-                  className="font-bold"
+                  className="font-mono font-bold"
                 />
               </div>
             </div>

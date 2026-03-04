@@ -166,7 +166,7 @@ const Invoice = () => {
     
     const message = `🚗 *Yousif & Sons Rent A Car*
 ━━━━━━━━━━━━━━━━
-📋 *Agreement {agreementNum}*
+📋 *Agreement #${agreementNum}*
 
 👤 *Client:* ${rental.client.fullName}
 📱 *Phone:* ${rental.client.phone}
@@ -293,7 +293,7 @@ Thank you for choosing Yousif & Sons!
                   onClick={() => setEditingAgreementNumber(true)}
                   className="flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
                 >
-                  <span className="text-xl font-bold">{displayAgreementNumber}</span>
+                  <span className="text-xl font-bold">#{displayAgreementNumber}</span>
                   <Edit className="w-4 h-4" />
                 </button>
               )}

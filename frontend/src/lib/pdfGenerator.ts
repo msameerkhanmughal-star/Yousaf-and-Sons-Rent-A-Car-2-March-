@@ -297,7 +297,7 @@ export const generateInvoicePDF = (rental: Rental): void => {
         </div>
         <div class="agreement-badge-container">
           <div class="agreement-badge">AGREEMENT</div>
-          <div class="agreement-no">Ref: {displayAgreementNumber}</div>
+          <div class="agreement-no">Ref: #${displayAgreementNumber}</div>
           <div class="agreement-date">Issued: ${formatDate(rental.createdAt)}</div>
         </div>
       </div>
